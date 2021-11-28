@@ -1,0 +1,38 @@
+<%- include('./partials/header'); %>
+    <div class="login-layout">
+        <div class="login-inner">
+            <div class="login-form-container">
+                <!-- ---------------- -->
+                <% if(locals.enterValidProperty ){ %>
+                    <p class="login-error">
+                        <%= enterValidProperty %>
+                    </p>
+                    <% } %>
+                        <!-- ----------------- -->
+                        <% if(locals.UsernotExist ){ %>
+                            <p class="login-error">
+                                <%= UsernotExist %>
+                            </p>
+                            <% } %>
+                                <!-- ----------------- -->
+                                <% if(locals.passwordEncorrect ){ %>
+                                    <p class="login-error">
+                                        <%= passwordEncorrect %>
+                                    </p>
+                                    <% } %>
+                                        <form action="/login" method="post">
+                                            <label for="username">User name</label>
+                                            <input id="username" type="text" name="username" required>
+                                            <label for="password">Password</label>
+                                            <input id="password" type="text" name="password" required>
+                                            <input type="submit" id="login" value="login">
+                                        </form>
+            </div>
+
+            <div class="registrasion-link">
+                <span>Don't have an account </span>
+                <a href="/signup">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/header'); %>

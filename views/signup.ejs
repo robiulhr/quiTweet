@@ -1,0 +1,44 @@
+<%- include('./partials/header'); %>
+    <div class="signup-layout">
+        <div class="signup-inner">
+            <div class="signup-form-container">
+                <!-- ----------------------- -->
+                <% if(locals.userExist){ %>
+                    <p class="signup-error">
+                        <%= userExist %>
+                    </p>
+                    <% } %>
+                        <!-- --------------------- -->
+                        <% if(locals.PasswordFeilsdmatching ){ %>
+                            <p class="signup-error">
+                                <%= PasswordFeilsdmatching %>
+                            </p>
+                            <% } %>
+                                <!-- --------------------------------- -->
+                                <% if(locals.enterValidProperty ){ %>
+                                    <p class="signup-error">
+                                        <%= enterValidProperty %>
+                                    </p>
+                                    <% } %>
+                                        <form action="/signup" method="post">
+                                            <label for="name">Your name</label>
+                                            <input id="name" name="name" type="text" required>
+                                            <label for="email">Email</label>
+                                            <input id="email" type="text" name="email" required>
+                                            <label for="username">User name</label>
+                                            <input id="username" type="text" name="username" required>
+                                            <label for="createpassword">Create Password</label>
+                                            <input id="createpassword" type="text" name="createpassword" required>
+                                            <label for="conformpassword">Conform Password</label>
+                                            <input id="conformpassword" type="text" name="conformpassword" required>
+                                            <input type="submit" id="login" value="Sign Up">
+                                        </form>
+            </div>
+
+            <div class="login-link">
+                <span>Already have an account </span>
+                <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/header'); %>
